@@ -9,7 +9,8 @@ export const TechBadge = ({ tech, className = '' }: { tech: string, className?: 
   let color = '';
   const name = tech.toLowerCase();
   
-  if (name.includes('java')) { Icon = FaJava; color = '#ED8B00'; }
+  if (name.includes('javascript')) { Icon = SiJavascript; color = '#F7DF1E'; }
+  else if (name.includes('java')) { Icon = FaJava; color = '#ED8B00'; }
   else if (name.includes('spring boot')) { Icon = SiSpringboot; color = '#6db33f'; }
   else if (name.includes('spring security')) { Icon = SiSpringsecurity; color = '#6db33f'; }
   else if (name.includes('react')) { Icon = SiReact; color = '#61DAFB'; }
@@ -20,7 +21,6 @@ export const TechBadge = ({ tech, className = '' }: { tech: string, className?: 
   else if (name.includes('nginx')) { Icon = SiNginx; color = '#009639'; }
   else if (name.includes('ibm')) { Icon = FaCloud; color = '#052FAD'; }
   else if (name.includes('typescript')) { Icon = SiTypescript; color = '#3178C6'; }
-  else if (name.includes('javascript')) { Icon = SiJavascript; color = '#F7DF1E'; }
   else if (name.includes('html')) { Icon = SiHtml5; color = '#E34F26'; }
   else if (name.includes('kafka')) { Icon = SiApachekafka; color = '#231F20'; }
   else if (name.includes('hibernate')) { Icon = SiHibernate; color = '#59666C'; }
