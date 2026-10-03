@@ -5,13 +5,12 @@ import EngineeringFocus from './components/EngineeringFocus';
 import History from './components/History';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import AiAssistant from './components/AiAssistant';
 
 const App: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative min-h-screen bg-[#fcfdff] w-full overflow-x-hidden font-sans text-gray-800">
+    <div className="relative min-h-screen bg-[#fcfdff] w-full overflow-x-hidden text-gray-800">
       <Navbar />
 
       <main className="w-full">
@@ -63,8 +62,6 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
-
-      <AiAssistant />
     </div>
   );
 };

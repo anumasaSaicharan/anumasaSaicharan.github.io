@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Lato', sans-serif;
+}
+
 :root {
     --primary: #4facfe;
     --secondary: #00f2fe;
@@ -11,11 +15,29 @@ html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: var(--bg-light);
     color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
+}
+
+.blob-shape {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+.floating-delayed {
+    animation: floating 5s ease-in-out infinite 1.5s;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 *, *::before, *::after {
