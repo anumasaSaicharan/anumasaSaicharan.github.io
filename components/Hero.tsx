@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-32 pb-16 bg-[#fcfdff] overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-20">
@@ -11,7 +21,7 @@ const Hero: React.FC = () => {
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#2d3436] mb-6 md:mb-8 leading-[1.15] tracking-tight">
               Hi, I'm <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 block mt-1 md:mt-2">Sai Charan Anumasa.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 animate-gradient-x block mt-1 md:mt-2">Sai Charan Anumasa.</span>
             </h1>
             <p className="text-gray-500 text-base md:text-lg lg:text-xl mb-10 md:mb-12 max-w-2xl font-medium leading-relaxed">
               I build backend and enterprise systems with Java 17, Spring Boot, React, and AWS — from database design and business workflows to production deployment.
@@ -33,10 +43,22 @@ const Hero: React.FC = () => {
           <div className="w-full lg:w-1/2 flex justify-center items-center relative z-10 py-10 lg:py-0">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               {/* Decorative blobs matching the screenshot */}
-              <div className="absolute top-0 right-10 w-16 h-16 bg-gradient-to-br from-red-300 to-pink-300 rounded-full floating blur-sm opacity-80 mix-blend-multiply"></div>
-              <div className="absolute bottom-4 left-0 w-20 h-20 bg-gradient-to-br from-yellow-300 to-orange-300 blob-shape floating-delayed blur-sm opacity-80 mix-blend-multiply"></div>
-              <div className="absolute -top-6 -right-6 w-24 h-24 border border-orange-100 rounded-full floating-delayed opacity-60"></div>
-              <div className="absolute top-12 -right-20 w-12 h-12 bg-pink-50 rounded-xl rotate-12 floating opacity-60"></div>
+              <div 
+                className="absolute top-0 right-10 w-16 h-16 bg-gradient-to-br from-red-300 to-pink-300 rounded-full floating blur-sm opacity-80 mix-blend-multiply pointer-events-none z-20"
+                style={{ transform: `translateY(${scrollY * 0.05}px)` }}
+              ></div>
+              <div 
+                className="absolute bottom-4 left-0 w-20 h-20 bg-gradient-to-br from-yellow-300 to-orange-300 blob-shape floating-delayed blur-sm opacity-80 mix-blend-multiply pointer-events-none z-20"
+                style={{ transform: `translateY(${scrollY * -0.05}px)` }}
+              ></div>
+              <div 
+                className="absolute -top-6 -right-6 w-24 h-24 border border-orange-100 rounded-full floating-delayed opacity-60 pointer-events-none z-20"
+                style={{ transform: `translateY(${scrollY * 0.08}px)` }}
+              ></div>
+              <div 
+                className="absolute top-12 -right-20 w-12 h-12 bg-pink-50 rounded-xl rotate-12 floating opacity-60 pointer-events-none z-20"
+                style={{ transform: `translateY(${scrollY * -0.1}px) rotate(12deg)` }}
+              ></div>
               
               {/* Main Avatar Circle */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-50 to-white rounded-full flex items-center justify-center p-6 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border-4 border-white">

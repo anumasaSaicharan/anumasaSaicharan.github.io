@@ -27,10 +27,10 @@ const App: React.FC = () => {
             <p className="text-gray-600 text-lg md:text-xl mb-12 font-medium">
               Available for discussions on backend architecture, enterprise systems, and engineering leadership.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
               <a
                 href="mailto:saicharan.anumasa@gmail.com"
-                className="px-10 py-4 bg-blue-600 text-white rounded-md text-sm font-bold shadow-md hover:bg-blue-700 transition-colors"
+                className="px-8 lg:px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 text-white rounded-xl text-sm font-bold shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:shadow-[0_15px_30px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-300"
               >
                 Get in Touch
               </a>
@@ -38,7 +38,7 @@ const App: React.FC = () => {
                 href="https://linkedin.com/in/sai-charan-anumasa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-10 py-4 border border-gray-300 hover:border-gray-400 text-gray-700 bg-white rounded-md text-sm font-bold shadow-sm transition-colors"
+                className="px-8 lg:px-10 py-4 bg-white border-2 border-gray-100 hover:border-blue-200 hover:bg-blue-50/30 text-gray-700 rounded-xl text-sm font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
               >
                 Connect on LinkedIn
               </a>
