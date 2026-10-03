@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     id: 'emtransq',
     title: 'EmtransQ',
     category: 'Product Traceability & Authentication | SaaS',
-    status: 'Production',
+    // status: 'Production',
     architecture: 'Monolithic SaaS',
     ownership: 'Sole full-stack owner',
     description: 'Production monolithic SaaS platform for product traceability and authentication. Generates unique product UIDs and QR labels at production, then enables end users to verify product authenticity through a web-based verification flow.',
@@ -32,11 +32,11 @@ export const PROJECTS: Project[] = [
   {
     id: 'savvynutri',
     title: 'Savvy Nutri',
-    category: 'Pharmaceutical LIMS',
-    status: 'In Development',
+    category: 'Pharmaceutical LIMS/MES',
+    // status: 'In Development',
     architecture: 'Monolithic Application',
     ownership: 'End-to-end development ownership',
-    description: 'Pharmaceutical Laboratory Information Management System covering the manufacturing lifecycle from customer demand and procurement through quality checks, production, packing, shipment, and billing.',
+    description: 'Pharmaceutical Manufacturing Execution System covering the manufacturing lifecycle from customer demand and procurement through quality checks, production, packing, shipment, and billing.',
     technologies: ['Java 17', 'Spring Boot', 'React', 'MySQL', 'AWS EC2'],
     details: {
       technicalDecisions: [
@@ -83,10 +83,10 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'shivashakti',
-    title: 'Shiva Shakti',
+    title: 'Primary Serialization Application',
     category: 'Product Traceability & Verification',
-    status: 'In Development',
-    description: 'Product traceability and verification platform currently under development, extending QR/UID-based product authentication workflows with industrial printing integration.',
+    // status: 'In Development',
+    description: 'Primary serialization application for pharmaceutical industry that extends QR/UID-based product authentication workflows with industrial printing integration.',
     technologies: ['Java 17', 'Spring Boot', 'React', 'TypeScript', 'MySQL', 'AWS EC2', 'Kafka'],
     details: {
       technicalDecisions: [
