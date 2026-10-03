@@ -21,7 +21,7 @@ const EngineeringFocus: React.FC = () => {
   ];
 
   const highlights = [
-    { value: "3+", label: "Years Professional Experience" },
+    { value: "4+", label: "Years Professional Experience" },
     { value: "6", label: "Featured Enterprise Projects" },
     { value: "Java 17", label: "Primary Backend Stack" }
   ];
