@@ -5,7 +5,6 @@ export const PROJECTS: Project[] = [
     id: 'emtransq',
     title: 'EmtransQ',
     category: 'Product Traceability & Authentication | SaaS',
-    // status: 'Production',
     architecture: 'Monolithic SaaS',
     ownership: 'Sole full-stack owner',
     description: 'Production monolithic SaaS platform for product traceability and authentication. Generates unique product UIDs and QR labels at production, then enables end users to verify product authenticity through a web-based verification flow.',
