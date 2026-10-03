@@ -131,35 +131,38 @@ export const EXPERIENCES: Experience[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: 'Backend & Core',
-    skills: ['Java 17', 'Spring Boot', 'Spring Security', 'REST APIs', 'Hibernate/JPA', 'SQL']
+    title: 'Languages',
+    skills: ['Java (8/17)', 'SQL (Structured Query Language)', 'JavaScript', 'TypeScript']
   },
   {
-    title: 'Frontend',
-    skills: ['React.js', 'TypeScript', 'JavaScript', 'HTML/CSS']
+    title: 'Backend Frameworks',
+    skills: ['Spring Boot', 'Spring Security', 'Hibernate', 'Spring Cloud', 'RESTful Microservices']
   },
   {
     title: 'Databases & Caching',
-    skills: ['MySQL', 'Microsoft SQL Server', 'Redis', 'Caffeine', 'Ehcache']
+    skills: ['MySQL', 'Microsoft SQL Server', 'Redis', 'Distributed Caching (Caffeine, Ehcache)']
   },
   {
-    title: 'Cloud & Deployment',
-    skills: ['AWS EC2', 'AWS S3', 'IBM Cloud', 'Nginx', 'Maven', 'Git']
+    title: 'Cloud & DevOps',
+    skills: ['Amazon Web Services (AWS EC2, S3)', 'Nginx', 'IBM Cloud', 'Git', 'Maven']
   },
   {
-    title: 'Architecture & Engineering',
+    title: 'Frontend Development',
+    skills: ['React.js', 'Flutter', 'UI Components', 'HTML/CSS']
+  },
+  {
+    title: 'Testing & Tools',
+    skills: ['JUnit', 'JMeter', 'Postman', 'API Testing']
+  },
+  {
+    title: 'Core Concepts',
     skills: [
-      'Monolithic Application Architecture',
-      'Multi-Tenant SaaS',
-      'Role-Based Access Control',
-      'Hierarchical Access Control',
-      'Database Design',
+      'Multi-Tenant SaaS Architecture',
       'System Design',
-      'Workflow Automation'
+      'Database Optimization',
+      'Workflow Automation',
+      'Agile Methodology',
+      'Role-Based Access Control'
     ]
-  },
-  {
-    title: 'Messaging / Integration',
-    skills: ['Kafka', 'REST Integrations', 'Payment Gateway Integrations']
   }
 ];
