@@ -11,8 +11,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${isScrolled || mobileMenuOpen ? 'py-4 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' : 'py-8 bg-transparent'}`}>
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+    <>
+      <nav className={`fixed top-0 left-0 w-full z-[110] transition-all duration-300 ${isScrolled || mobileMenuOpen ? 'py-4 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' : 'py-8 bg-transparent'}`}>
+        <div className="container mx-auto px-6 md:px-12 flex justify-between items-center relative z-[120]">
         <a href="#" className="flex items-baseline gap-0.5 text-xl md:text-2xl font-extrabold text-[#2d3436] tracking-tight z-[110]">
           <span>SCA</span>
           <span className="text-blue-500 leading-none">.</span>
@@ -42,17 +43,18 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
+      </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white z-[105] transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} flex flex-col items-center justify-center space-y-8`}>
-        <a href="#home" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d3436]">Home</a>
-        <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d3436]">About</a>
-        <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d3436]">Experience</a>
-        <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d3436]">Projects</a>
-        <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d3436]">Skills</a>
-        <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d3436]">Contact</a>
+      <div className={`fixed inset-0 bg-white/98 backdrop-blur-xl z-[105] transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} flex flex-col items-center justify-center space-y-8`}>
+        <a href="#home" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-heading font-extrabold text-[#2d3436] hover:text-blue-500 transition-colors">Home</a>
+        <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-heading font-extrabold text-[#2d3436] hover:text-blue-500 transition-colors">About</a>
+        <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-heading font-extrabold text-[#2d3436] hover:text-blue-500 transition-colors">Experience</a>
+        <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-heading font-extrabold text-[#2d3436] hover:text-blue-500 transition-colors">Projects</a>
+        <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-heading font-extrabold text-[#2d3436] hover:text-blue-500 transition-colors">Skills</a>
+        <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-3xl font-heading font-extrabold text-[#2d3436] hover:text-blue-500 transition-colors">Contact</a>
       </div>
-    </nav>
+    </>
   );
 };
 

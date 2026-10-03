@@ -1,5 +1,6 @@
 import React from 'react';
 import { SKILL_CATEGORIES } from '../constants';
+import { TechBadge } from './TechBadge';
 
 export default function Skills() {
   return (
@@ -17,9 +18,7 @@ export default function Skills() {
               <h3 className="font-extrabold text-lg text-slate-800 mb-6 pb-4 border-b border-gray-100">{category.title}</h3>
               <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, idx) => (
-                  <span key={idx} className="px-4 py-2 bg-gradient-to-br from-gray-50 to-white text-gray-700 text-sm font-bold rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 hover:text-blue-600 transition-colors duration-300 cursor-default">
-                    {skill}
-                  </span>
+                  <TechBadge key={idx} tech={skill} />
                 ))}
               </div>
             </div>

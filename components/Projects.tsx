@@ -1,5 +1,6 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
+import { TechBadge } from './TechBadge';
 
 export default function Projects() {
   const emtransq = PROJECTS.find(p => p.id === 'emtransq');
@@ -61,9 +62,7 @@ export default function Projects() {
                 <h4 className="font-heading font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   {emtransq.technologies.map((tech, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-white shadow-sm text-blue-600 text-xs font-bold rounded-lg border border-blue-50/80">
-                      {tech}
-                    </span>
+                    <TechBadge key={idx} tech={tech} className="bg-blue-50/30 border-blue-100/50 text-blue-700" />
                   ))}
                 </div>
               </div>
@@ -116,9 +115,7 @@ export default function Projects() {
               <div className="relative z-10 mt-auto pt-6 border-t border-gray-100">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, idx) => (
-                    <span key={idx} className="px-2.5 py-1 bg-gray-50/80 text-gray-600 text-[10px] font-bold uppercase tracking-wider rounded-md border border-gray-100 group-hover:border-blue-100 transition-colors">
-                      {tech}
-                    </span>
+                    <TechBadge key={idx} tech={tech} />
                   ))}
                 </div>
               </div>
