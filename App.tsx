@@ -16,9 +16,9 @@ const App: React.FC = () => {
       <main className="w-full">
         <Hero />
         <EngineeringFocus />
+        <Skills />
         <History />
         <Projects />
-        <Skills />
 
         {/* CTA Banner */}
         <section id="contact" className="py-24 md:py-32 bg-gray-50 border-t border-gray-100">

@@ -5,27 +5,20 @@ export const PROJECTS: Project[] = [
     id: 'emtransq',
     title: 'EmtransQ',
     category: 'Product Traceability & Authentication | SaaS',
-    status: 'Production',
-    architecture: 'Monolithic SaaS',
+    architecture: 'Multi-Tenant SaaS',
     ownership: 'Sole full-stack owner',
-    description: 'Production monolithic SaaS platform for product traceability and authentication. Generates unique product UIDs and QR labels at production, then enables end users to verify product authenticity through a web-based verification flow.',
-    technologies: ['Java 17', 'Spring Boot', 'React.js', 'MySQL', 'Redis', 'AWS EC2', 'Nginx', 'Spring Security'],
+    description: 'Production multi-tenant SaaS platform for product traceability and authentication. Generates unique product UIDs and QR labels at production and enables end users to verify product authenticity through a web-based verification flow.',
+    technologies: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'Redis', 'Spring Security', 'AWS EC2', 'Nginx'],
     details: {
-      problem: 'Counterfeit products require a mechanism for manufacturers and end users to verify whether a product originated from the genuine manufacturer.',
-      solution: 'The platform generates unique UIDs during production and associates them with QR-based labels. Users scan the QR code and are redirected to a web verification page.',
       technicalDecisions: [
-        'Monolithic Spring Boot architecture',
+        'Multi-tenant architecture',
         'Tenant-isolated databases',
-        'Tenant ID propagated through request context',
-        'Backend tenant authorization before tenant-specific operations',
-        'Redis for fast authentication/verification',
-        'Spring Security',
-        'OAuth authentication',
-        'Session handling',
-        'Single-device login',
-        'AWS EC2 deployment',
-        'Nginx',
-        'User/volume-based SaaS subscription model.'
+        'Tenant ID propagation through request context',
+        'Backend tenant authorization',
+        'Redis-based verification',
+        'Spring Security & OAuth authentication',
+        'Session handling & single-device login',
+        'Subscription workflows'
       ]
     }
   },
@@ -33,18 +26,30 @@ export const PROJECTS: Project[] = [
     id: 'savvynutri',
     title: 'Savvy Nutri',
     category: 'Pharmaceutical LIMS/MES',
-    // status: 'In Development',
     architecture: 'Monolithic Application',
     ownership: 'End-to-end development ownership',
-    description: 'Pharmaceutical Manufacturing Execution System covering the manufacturing lifecycle from customer demand and procurement through quality checks, production, packing, shipment, and billing.',
-    technologies: ['Java 17', 'Spring Boot', 'React', 'MySQL', 'AWS EC2'],
+    description: 'End-to-end pharmaceutical manufacturing platform covering the lifecycle from customer demand and procurement through quality checks, production, packing, shipment, and billing.',
+    technologies: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'AWS EC2'],
     details: {
       technicalDecisions: [
-        'End-to-end application ownership',
-        'Database design/development ownership',
-        'RBAC',
+        'Backend workflows and database structures',
+        'Role-Based Access Control (RBAC)',
+        'Business validations and end-to-end traceability',
         'Audit-oriented record keeping',
         'Workflow: Procurement → QC → QA → Production → BMR → IPQC → Finished Goods → Packing → Shipment/Billing'
+      ]
+    }
+  },
+  {
+    id: 'primaryserialization',
+    title: 'Primary Serialization Application',
+    category: 'Product Traceability & Verification',
+    description: 'Primary serialization application extending UID/QR-based product traceability and verification workflows with industrial printing integration.',
+    technologies: ['Java', 'Spring Boot', 'React.js', 'TypeScript', 'MySQL', 'AWS EC2', 'Kafka'],
+    details: {
+      technicalDecisions: [
+        'Industrial printers integration',
+        'Kafka-based event-driven processing for serialization workflows'
       ]
     }
   },
@@ -53,16 +58,14 @@ export const PROJECTS: Project[] = [
     title: 'Vyapar Mitra',
     category: 'Retailer & Distributor Engagement',
     scale: '~70,000 users',
-    description: 'Hierarchy-based retailer and distributor engagement platform focused on sales programs, loyalty campaigns, coupon redemption, cashback programs, and user engagement.',
-    technologies: ['Java 17', 'Spring Boot', 'React', 'MySQL', 'AWS EC2'],
+    description: 'Employee, Retailer and distributor engagement platform supporting hierarchical operations, role-based access control, sales programs, loyalty campaigns, coupon redemption, cashback programs, and user engagement workflows.',
+    technologies: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'AWS EC2'],
     details: {
       technicalDecisions: [
-        'Hierarchical access control',
+        'Hierarchical operations',
         'Role-based access control',
-        'Retailer/distributor workflows',
-        'Loyalty programs',
-        'Coupon/cashback programs',
-        'Sales engagement'
+        'Sales programs and loyalty campaigns',
+        'Coupon redemption & cashback programs'
       ]
     }
   },
@@ -71,29 +74,15 @@ export const PROJECTS: Project[] = [
     title: 'Subeej Kisan',
     category: 'Farmer Information & Operations',
     scale: '~150,000 farmers',
-    description: 'Farmer-focused information and engagement platform supporting hierarchical operations and tracking from organizational levels through farmer-level interactions.',
-    technologies: ['Java 17', 'Spring Boot', 'React', 'MySQL', 'AWS EC2']
+    description: 'Farmer-focused information and engagement platform supporting hierarchical organizational operations and tracking from organizational levels through farmer-level interactions.',
+    technologies: ['Java', 'Spring Boot', 'React.js', 'MySQL', 'AWS EC2']
   },
   {
     id: 'mcrc',
     title: 'MCRC',
     category: 'Agricultural Research Operations',
-    description: 'Enterprise agricultural research operations platform supporting farm operations, inventory handling, central-store activities, equipment management, and repair & maintenance workflows.',
-    technologies: ['Java 17', 'Spring Boot', 'Microsoft SQL Server', 'IBM Cloud']
-  },
-  {
-    id: 'shivashakti',
-    title: 'Primary Serialization Application',
-    category: 'Product Traceability & Verification',
-    // status: 'In Development',
-    description: 'Primary serialization application for pharmaceutical industry that extends QR/UID-based product authentication workflows with industrial printing integration.',
-    technologies: ['Java 17', 'Spring Boot', 'React', 'TypeScript', 'MySQL', 'AWS EC2', 'Kafka'],
-    details: {
-      technicalDecisions: [
-        'Domino industrial printers integration',
-        'Kafka is used as part of the application\'s event-driven processing workflow.'
-      ]
-    }
+    description: 'Enterprise agricultural research operations platform supporting farm operations, inventory handling, central-store activities, equipment management, and repair and maintenance workflows.',
+    technologies: ['Java', 'Spring Boot', 'Microsoft SQL Server', 'IBM Cloud']
   }
 ];
 
@@ -104,15 +93,13 @@ export const EXPERIENCES: Experience[] = [
     role: 'Senior Java Software Engineer',
     period: 'Sep 2025 – Present',
     description: [
-      'Own EmtransQ end-to-end as a production SaaS platform, covering backend, frontend, database, authentication, multi-tenancy, subscriptions, and deployment.',
-      'Built EmtransQ as a monolithic Java 17 / Spring Boot application with React, MySQL, Redis, AWS EC2, and Nginx.',
-      'Implemented tenant isolation using tenant-specific databases and tenant context validation across requests.',
-      'Implemented OAuth authentication, session handling, Spring Security, and single-device login.',
-      'Used Redis specifically for fast product authentication and verification to minimize repeated database/network overhead during QR/UID verification.',
-      'Designed UID generation and QR-based product authentication workflows for counterfeit detection and product verification.',
-      'Directed 3–4 junior developers on module implementation and QA while retaining ownership of system design, integration decisions, and releases.',
-      'Independently built and maintain Savvy Nutri, a monolithic pharmaceutical LIMS currently under development.',
-      'Manage AWS EC2 deployments, production releases, and server configuration for owned platforms.'
+      'Sole full-stack owner of EmtransQ, a production multi-tenant SaaS platform built with Java, Spring Boot, React.js, and MySQL.',
+      'Designed and implemented multi-tenant architecture, including tenant-isolated databases, context propagation, and subscription workflows.',
+      'Work directly with clients to gather requirements, propose technical solutions, and provide deployment and production support.',
+      'Directed 3–4 junior developers across module implementation and QA while owning system design and release sign-off.',
+      'Built and independently maintain Savvy Nutri, a pharmaceutical LIMS/MES for end-to-end manufacturing workflows.',
+      'Delivered a primary serialization and product verification application integrating industrial printers and Kafka-based event processing.',
+      'Manage AWS EC2 deployments, Nginx configuration, production releases, and operational support.'
     ]
   },
   {
@@ -121,10 +108,22 @@ export const EXPERIENCES: Experience[] = [
     role: 'Assistant System Engineer (Java Developer)',
     period: 'Apr 2023 – Sep 2025',
     description: [
-      'Developed and maintained backend services and APIs as a core contributor to enterprise applications.',
-      'Worked extensively with Spring Boot, React, and MySQL to deliver end-to-end features.',
-      'Contributed to the development of Vyapar Mitra (~70,000 users) and Subeej Kisan (~150,000 farmers), implementing hierarchical access controls and loyalty program workflows.',
-      'Participated in application deployment and maintenance processes.'
+      'Developed and maintained Spring Boot REST APIs for platforms serving over 200,000 users; optimized SQL queries, reducing average API response time by ~25%.',
+      'Implemented Redis caching and SQL indexing for high-traffic endpoints, reducing database load and latency by ~30%.',
+      'Developed secure REST integrations with payment gateways and third-party services, supporting >50,000 transactions monthly.',
+      'Built reusable React.js components and integrated frontend workflows for a platform receiving over 1 million monthly visits.',
+      'Maintained backend functionality for Vyapar Mitra, Subeej Kisan, MCRC, and UID/label printing systems.'
+    ]
+  },
+  {
+    id: 'exp3',
+    company: 'Empover i-Tech Pvt Ltd',
+    role: 'Java Developer Intern',
+    period: 'Oct 2022 – Mar 2023',
+    description: [
+      'Implemented distributed caching using Redis, Caffeine, and Ehcache, improving application performance by ~35%.',
+      'Optimized SQL queries and developed backend APIs supporting over 10,000 daily transactions.',
+      'Developed React.js UI enhancements and API integrations, improving user experience and reducing page abandonment by ~15%.'
     ]
   }
 ];
@@ -132,23 +131,31 @@ export const EXPERIENCES: Experience[] = [
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Languages',
-    skills: ['Java (8/17)', 'SQL (Structured Query Language)', 'JavaScript', 'TypeScript']
+    skills: ['Java (8/17)', 'SQL']
   },
   {
     title: 'Backend Frameworks',
-    skills: ['Spring Boot', 'Spring Security', 'Hibernate', 'Spring Cloud', 'RESTful Microservices']
+    skills: ['Spring Boot', 'Spring Security', 'Hibernate', 'Spring Cloud', 'RESTful APIs', 'Microservices']
   },
   {
     title: 'Databases & Caching',
-    skills: ['MySQL', 'Microsoft SQL Server', 'Redis', 'Distributed Caching (Caffeine, Ehcache)']
+    skills: ['MySQL', 'Microsoft SQL Server', 'Redis', 'SQL Optimization', 'Database Indexing']
+  },
+  {
+    title: 'Messaging & Data Integration',
+    skills: ['Apache Kafka', 'Debezium', 'Change Data Capture (CDC)', 'Event-Driven Architecture']
   },
   {
     title: 'Cloud & DevOps',
-    skills: ['Amazon Web Services (AWS EC2, S3)', 'Nginx', 'IBM Cloud', 'Git', 'Maven']
+    skills: ['AWS EC2', 'AWS S3', 'Nginx', 'IBM Cloud', 'Git', 'Maven']
   },
   {
     title: 'Frontend Development',
-    skills: ['React.js', 'Flutter', 'UI Components', 'HTML/CSS']
+    skills: ['React.js', 'Flutter', 'UI Components', 'REST API Integration']
+  },
+  {
+    title: 'AI-Assisted Development',
+    skills: ['ChatGPT', 'Claude', 'GitHub Copilot', 'Code Generation', 'Debugging', 'Refactoring', 'Frontend Development']
   },
   {
     title: 'Testing & Tools',
@@ -161,8 +168,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       'System Design',
       'Database Optimization',
       'Workflow Automation',
-      'Agile Methodology',
-      'Role-Based Access Control'
+      'Role-Based Access Control',
+      'Agile Methodology'
     ]
   }
 ];
