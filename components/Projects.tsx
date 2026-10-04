@@ -26,7 +26,9 @@ export default function Projects() {
                 <p className="text-blue-600 font-medium text-sm mt-1">{emtransq.category} • {emtransq.architecture}</p>
               </div>
               <div className="flex flex-col items-end gap-2 text-sm text-gray-600 text-right">
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded font-semibold text-xs uppercase">{emtransq.status}</span>
+                {emtransq.status && (
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded font-semibold text-xs uppercase">{emtransq.status}</span>
+                )}
                 <span className="font-medium">{emtransq.ownership}</span>
               </div>
             </div>
